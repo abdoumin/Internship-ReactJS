@@ -1,5 +1,6 @@
 .reserve {
   width: 100vw;
+  
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.418);
   position: fixed;
@@ -11,9 +12,12 @@
 }
 
 .rContainer {
-  background-color: white;
+  --background: linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%));
+  background: var(--background);
   padding: 20px;
   position: relative;
+  text-align: center;
+  color : white;
 }
 
 .rClose {

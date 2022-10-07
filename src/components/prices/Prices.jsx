@@ -40,7 +40,7 @@ const Prices = ({setOpen}) => {
           <div className="rItem">
             <div className="rItemInfo">
               <div className="rTitle">
-                {item.title} : <div className="rPrice">{item.price}</div>
+                {item.title} : {item.price}
               </div>
             </div>
           </div>

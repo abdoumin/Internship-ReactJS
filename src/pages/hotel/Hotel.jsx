@@ -129,9 +129,6 @@ const Hotel = () => {
                 <FontAwesomeIcon icon={faLocationDot} />
                 <span style={{fontSize : 16}}>{data.city}</span>
               </div>
-              <span className="hotelDistance">
-                Excellent location – {data.distance}m from center
-              </span>
             </div>
 
             {/* Adding the Slider */}
@@ -140,10 +137,11 @@ const Hotel = () => {
 
             <div className="hotelDetails">
               <div className="hotelDetailsTexts">
-                {data.des}
+                <div>{data.des}</div>
+                <br></br>
                 <ul>
-                  <li>Tel : {data.tel}</li>
                   <li>Nom du responsable : {data.responsable}</li>
+                  <li>Tel : {data.tel}</li>
                 </ul>
               </div>
               <div className="hotelDetailsPrice">
