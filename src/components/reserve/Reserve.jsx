@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-import "./reserve.css";
+import './reserve2.css';
 import useFetch from "../../hooks/useFetch";
 import usePost from "../../hooks/usePost";
 import { useContext, useState } from "react";
@@ -161,25 +161,25 @@ const Reserve = ({ setOpen, hotelId, dates }) => {
     } catch (err) {}
   };
   return (
-    <div className="reserve">
-      <div className="rContainer">
+    <div className="reserve1">
+      <div className="rContainer1">
         <FontAwesomeIcon
           icon={faCircleXmark}
-          className="rClose"
+          className="rClose1"
           onClick={() => setOpen(false)}
         />
         <span>Select your rooms:</span>
         {data.map((item) => (
-          <div className="rItem" key={item.id}>
-            <div className="rInfo">
-              <div className="rTitle">{item.title}</div>
-              <div className="rDesc">{item.des}</div>
-              <div className="rMax">
-                Max people: <b>{item.maxPeople}</b>
+          <div className="rItem1" key={item.id}>
+            <div className="rInfo1">
+              <div className="rTitle1">{item.title}</div>
+              {/* <div className="rDesc">{item.des}</div> */}
+              <div className="rMax1">
+                Max people: <b>{item.max_people}</b>
               </div>
             </div>
-            <div className="rSelectRooms">
-              <div className="room">
+            <div className="rSelectRooms1">
+              <div className="room1">
                 <input
                   type="checkbox"
                   value={item.id}
@@ -205,7 +205,7 @@ const Reserve = ({ setOpen, hotelId, dates }) => {
               </div>*/}
           </div>
         ))}
-        <button className="rButton" onClick={handleClick}>Reserve Now!</button>
+        <button className="rButton1" onClick={handleClick}>Reserve Now!</button>
       </div>
     </div>
   );
