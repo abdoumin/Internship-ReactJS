@@ -1,0 +1,48 @@
+services:
+
+  mysqldb:
+    image: abdoumin/mysql:0.0.1
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=user
+      - MYSQL_DATABASE=estivage
+    ports:
+      - 3308:3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - frontend
+  app:
+    depends_on:
+      - mysqldb
+    image :
+      abdoumin/fullstackapp-backend:0.0.1
+    restart: on-failure
+    ports:
+      - 6868:8080
+    volumes:
+      - .m2:/root/.m2
+    networks:
+      - backend
+      - frontend
+
+
+  front-end:
+    image : abdoumin/fullstackapp-frontend:0.0.1
+    restart: always
+    networks:
+      - frontend
+    tty: true
+    ports:
+      - 80:80
+    depends_on:
+      - app
+
+
+volumes:
+  db:
+
+networks:
+  backend:
+  frontend:
+
